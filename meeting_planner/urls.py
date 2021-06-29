@@ -17,10 +17,12 @@ from django.contrib import admin
 from django.urls import path
 
 from website.views import welcome, date, aboutMyself
+from meetings.views import detail
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', welcome),
     path('date', date),
     path('about', aboutMyself),
+    path("meetings/<int:id>", detail),
 ]
